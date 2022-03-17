@@ -34,8 +34,9 @@ void Game::check_events() {
 void Game::update() {
 	switch (game_state) {
 	case PLAY:
+		map.update();
 		player.update();
-
+		stand.update();
 		break;
 	case GAME_OVER:
 		break;
@@ -47,7 +48,9 @@ void Game::draw() {
 	switch (game_state) {
 
 	case PLAY:
+		window.draw(map.getSprite());
 		player.draw(window);
+		stand.draw(window);
 		break;
 	//case GAME_OVER:
 	}

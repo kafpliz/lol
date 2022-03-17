@@ -12,26 +12,18 @@ void Player::draw(sf::RenderWindow& window) {
 void Player::update() {
 	float speedx = PLAYER_SPEEDX;
 	//float speedy = PLAYER_SPEEDY;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) &&
-		sprite.getPosition().x > 0
-		)
-	{
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && sprite.getPosition().x  > 0) {
 		sprite.move(-speedx, 0);
 	}
-	else
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&
-			sprite.getPosition().x < WINDOW_WIDTH - getWidth()
-			)
-		{
-			sprite.move(speedx, 0);
-		}
-		/*else
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && sprite.getPosition().y + 60.f ) {
-				sprite.move(speedy, 0);
-				}*/
+		else
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sprite.getPosition().x  < WINDOW_WIDTH - getWidth() ) {
+				sprite.move(speedx, 0);
+				}
+			
 	
 }
-size_t Player::getWidth() { return sprite.getLocalBounds().width; }
-size_t Player::getHeight() { return sprite.getLocalBounds().height; }
-//sf::FloatRect Player::getHitBox() { return sprite.getGlobalBounds(); }
+size_t Player::getWidth() { return sprite.getLocalBounds().width;}
+size_t Player::getHeight() { return sprite.getLocalBounds().height;}
+sf::FloatRect Player::getHitBox() { return sprite.getGlobalBounds(); }
 sf::Vector2f Player::getPosition() { return sprite.getPosition(); }

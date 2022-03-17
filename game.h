@@ -3,7 +3,8 @@
 #include "SFML/Graphics.hpp"
 #include "player.h"
 #include <vector>
-
+#include "map.h"
+#include "stand.h"
 
 
 class Game {
@@ -19,6 +20,8 @@ private:
 
 	sf::RenderWindow window;
 	Player player;
+	Map map;
+	Stand stand;
 	GameState game_state = PLAY;
 	//Splash game_over;
 

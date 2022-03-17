@@ -1,20 +1,21 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "settings.h"
-#include <list>
 
-class Stand {
+class Map {
 private:
 	sf::Texture texture;
 	sf::Sprite sprite;
-	sf::Vector2f speed = sf::Vector2f(0.0f, 3.0f);
+
 public:
-	Stand() {
-		texture.loadFromFile("stand.png");
+	Map() {
+		texture.loadFromFile("map.jpg");
 		sprite.setTexture(texture);
 	}
 	sf::Sprite getSprite() { return sprite; }
-		
-	void update(){}
+
+	void update() {}
+
 
 };
+
